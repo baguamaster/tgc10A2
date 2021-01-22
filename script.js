@@ -11,20 +11,18 @@ $("#form").submit(function(e)) {
 
         $.get(url, function(data) {
 
-                    $(#result ").html('')
+            $(#result).html('')
 
-                        console.log(data)
+            console.log(data)
 
-                        data.organic_results.forEach(res => {
+            data.organic_results.forEach(res => {
 
-                                result = '
+                result = <
+                    h1 > $ { res.title } < /h2 > <br><a target="_blank" href="$(res.url}">$<res.url}</a >
+                    <
+                    p > $ { res.snippet } < /p>
 
-                                <
-                                h1 > $ { res.title } < /h2 > <br><a target="_blank" href="$(res.url}">$<res.url}</a >
-                                    <
-                                    p > $ { res.snippet } < /p>
+                $(#result).append(result)
 
-                                $(#result ").append(result)
-
-                                });
-                        })
+            });
+        })
